@@ -21,6 +21,10 @@ public class ExceptionHandler
     // Task:
     // 3. In the 'catch' block, display the exception message in the console.
 
+    /// <summary>
+    /// This is my iterator before checking my homework.
+    /// </summary>
+    /// <param name="caughtException">Exception</param>
     public static void Iterator(Exception caughtException)
     {
         // It's the switcher to display the exception message only once:
@@ -59,6 +63,53 @@ public class ExceptionHandler
         if (switcher == 0)
         {
             Console.WriteLine($"\tA new exception is caught, not from the array. Default system message: \"{caughtException.Message}\"");
+        }
+    }
+
+    /// <summary>
+    /// This is an iterator created after checking the homework based on the mentor's recommendations
+    /// </summary>
+    /// <param name="exceptionArray">Exception array</param>
+    public static void MentorIterator(Exception[] exceptionArray)
+    {
+        Console.WriteLine("\nThis is exception handling based on the mentor iterator.\n");
+
+        // Mentor said that I should have handled exceptions from the array in this way:
+        // I have to put the exception handling in the foreach loop and manage exceptions
+        // in the loop itself, manually throwing exceptions via 'throw' at each iteration.
+        foreach (Exception arrayException in exceptionArray)
+        {
+            try
+            {
+                throw arrayException;
+            }
+            catch (HomeworkException)
+            {
+                Console.WriteLine($"\nThe {arrayException.GetType().Name} exception from the array has been caught.\n" +
+                        $"\t{arrayException.Message}\n" +
+                        $"\t{arrayException.HelpLink}");
+                foreach (DictionaryEntry de in arrayException.Data)
+                {
+                    Console.WriteLine($"\t{de.Key.ToString()} {de.Value}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nThe {arrayException.GetType().Name} exception from the array has been caught.\n" +
+                        $"\t{ex.Message}");
+            }
+        }
+
+        // Generating a non-array exception separately, for the test:
+        try
+        {
+            int? a = null;
+            int b = 1;
+            int c = (int)a + b;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"\nA new exception is caught in MentorIterator() method, not from the array: {ex.GetType().Name}.\n\tDefault system message: \"{ex.Message}\"");
         }
     }
 }

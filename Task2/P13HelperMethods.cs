@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,6 +51,21 @@ public class HelperMethods
                 sortingOrder = Convert.ToByte(Console.ReadLine());
                 if (sortingOrder != 1 && sortingOrder != 2)
                 {
+                    // Solution, after checking homework:
+                    // 2.1.1.3. Trying to use localized exception messages when throwing an exception:
+
+                    // var resourceManager = new ResourceManager("M09Practicum.Resources.ExceptionMessages", Assembly.GetExecutingAssembly());
+                    // throw new KeyboardInputException(resourceManager.GetString("KeyboardInputIsWrong"));
+
+                    // I think I did everything like here:
+                    // https://learn.microsoft.com/ru-ru/dotnet/standard/exceptions/how-to-create-localized-exception-messages
+                    // but it doesn't work: it doesn't find 'M09Practicum.Resources.ExceptionMessages.resources'.
+                    // I mean, for some reason, it's searching 
+                    // 'M09Practicum.Resources.ExceptionMessages.resources'
+                    // not the
+                    // 'M09Practicum.Resources.ExceptionMessages.resx'
+
+                    // So I left the old version:
                     throw new KeyboardInputException("Please enter 1 or 2 only.");
                 }
             }

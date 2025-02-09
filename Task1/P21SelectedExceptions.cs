@@ -22,10 +22,10 @@ public class SelectedExceptions
     /// </summary>
     public static Exception[] exceptionArray =
     {
-        new DivideByZeroException("Message from exception array: \"5th place in frequency of occurrence.\""),
-        new ArgumentException("Message from exception array: \"3rd place in frequency of occurrence.\""),
-        new IndexOutOfRangeException("Message from exception array: \"4th place in frequency of occurrence.\""),
-        new FormatException("Message from exception array: \"2nd place in frequency of occurrence.\""),
-        new HomeworkException("Message from exception array: \"1st place in frequency of occurrence.\"")
+        new DivideByZeroException("Message of array exception: \"5th place in frequency of occurrence.\""),
+        new ArgumentException("Message of array exception: \"3rd place in frequency of occurrence.\""),
+        new IndexOutOfRangeException("Message of array exception: \"4th place in frequency of occurrence.\""),
+        new FormatException("Message of array exception: \"2nd place in frequency of occurrence.\""),
+        new HomeworkException("Message of array exception: \"1st place in frequency of occurrence.\"")
     };
 }

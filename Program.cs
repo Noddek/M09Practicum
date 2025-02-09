@@ -6,6 +6,7 @@ internal class Program
     {
         // Task 1:
         Task1.Run.CallExceptions();
+        Task1.Run.CallMentorIterator();
 
         // Task 2:
         Task2.EventSubscriber.RunSurnameSorting();

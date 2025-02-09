@@ -31,4 +31,20 @@ public class Run
             Console.WriteLine("\n------------- Task 1 has been completed -------------");
         }
     }
+
+    /// <summary>
+    /// A method to call the mentor iterator, created after checking the homework.
+    /// </summary>
+    public static void CallMentorIterator()
+    {
+        try
+        {
+            Console.WriteLine("\n---------------------- Task 1 -----------------------");
+            ExceptionHandler.MentorIterator(SelectedExceptions.exceptionArray);
+        }
+        finally
+        {
+            Console.WriteLine("\n------------- Task 1 has been completed -------------");
+        }
+    }
 }
